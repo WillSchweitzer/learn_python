@@ -7,6 +7,17 @@ import unittest
 from src.util import EmptyQueue
 
 
+# ========== Constants ========== #
+
+DATA: dict[str, str | int | float] = {
+    'first' : 'John',
+    'last' : 'Doe',
+    'age' : 99,
+    'gpa' : 4.00,
+    'email' : 'john_doe@example.com'
+}
+
+
 # ========== Tests ========== #
 
 class TestUtilClass (unittest.TestCase):

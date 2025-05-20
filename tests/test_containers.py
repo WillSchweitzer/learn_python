@@ -7,17 +7,7 @@ import unittest
 from src.classes.student import Student
 from src.classes.containers import Queue
 from src.util import EmptyQueue
-
-
-# ========== Constants ========== #
-
-DATA: dict[str, str | int | float] = {
-    'first' : 'John',
-    'last' : 'Doe',
-    'age' : 99,
-    'gpa' : 4.00,
-    'email' : 'john_doe@example.com'
-}
+from tests.test_util import DATA
 
 
 # ========== Tests ========== #

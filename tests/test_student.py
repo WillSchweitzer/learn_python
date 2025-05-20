@@ -5,17 +5,7 @@
 import unittest
 
 from src.classes.student import Student, Tutor
-
-
-# ========== Constants ========== #
-
-DATA: dict[str, str | int | float] = {
-    'first' : 'John',
-    'last' : 'Doe',
-    'age' : 99,
-    'gpa' : 4.00,
-    'email' : 'john_doe@example.com'
-}
+from tests.test_util import DATA
 
 
 # ========== Tests ========== #
@@ -43,13 +33,5 @@ class TestTutorClass (unittest.TestCase):
 
     def test_str(self):
         """Test the Tutor can be output correctly"""
-        data: dict[str, str | int | float] = {
-            'first' : 'John',
-            'last' : 'Doe',
-            'age' : 99,
-            'gpa' : 4.00,
-            'email' : 'john_doe@example.com'
-        }
-
-        s = Tutor(data)
+        s = Tutor(DATA)
         self.assertTrue("TUTOR" in str(s))
