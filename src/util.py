@@ -7,4 +7,5 @@
 
 # ========== EXCEPTIONS ========== #
 
-class EmptyQueue (Exception): pass
+class EmptyQueue (Exception):
+    """Empty Container for Queue Class"""

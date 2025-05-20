@@ -1,15 +1,25 @@
 '''Simple student class'''
 
 class Student:
-    def __init__(self, first: str, last: str, age: int, gpa: float, email: str):
-        self._first = first
-        self._last = last
-        self._age = age
-        self._gpa = gpa
-        self._email = email
-        self._odin = email.split('@')[0]
+    """Student class"""
+    def __init__(self, data: dict[str, str | int | float]):
+        self._first: str = str(data["first"])
+        self._last: str = str(data["last"])
+        self._age: int = int(data["age"])
+        self._gpa: float = float(data["gpa"])
+        self._email: str = str(data["email"])
+
+    def __str__ (self) -> str:
+        return f"[STUDENT]{self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
+
+    @property
+    def odin (self) -> str:
+        """Get the ODIN id."""
+        return self._email.split('@', maxsplit=1)[0]
 
 
 class Tutor (Student):
-    def __init__(self, first: str, last: str, age: int, gpa: float, email: str):
-        super().__init__(first, last, age, gpa, email)
+    """Tutor class, extension of student class"""
+
+    def __str__ (self) -> str:
+        return f"[TUTOR]{self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
