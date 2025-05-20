@@ -1,5 +1,11 @@
 
+# Dependencies
 .venv
+
+# Compiled Python
 __pycache__
-.pytest_cache
 *.pyc
+
+# PyTest
+.pytest_cache
+.coverage
