@@ -7,7 +7,7 @@ import unittest
 from src.util import EmptyQueue
 
 
-# ========== Imports ========== #
+# ========== Tests ========== #
 
 class TestUtilClass (unittest.TestCase):
     """Test class for util"""

@@ -6,7 +6,7 @@ from src.util import EmptyQueue
 
 T = TypeVar('T')
 
-class ClassQueue (Generic[T]):
+class Queue (Generic[T]):
     """Queue class with specified datatype"""
     def __init__(self):
         self._storage: list[T] = []

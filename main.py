@@ -1,9 +1,9 @@
 """main"""
-from src import ClassQueue, Student
+from src import Queue, Student
 
 def main ():
     """Main function"""
-    students = ClassQueue[Student]()
+    students = Queue[Student]()
 
     data: dict[str, str | int | float] = {
         'first' : 'Will',
