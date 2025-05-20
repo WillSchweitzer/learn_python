@@ -10,7 +10,7 @@ class Student:
         self._email: str = str(data["email"])
 
     def __str__ (self) -> str:
-        return f"[STUDENT]{self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
+        return f"[STUDENT] {self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
 
     @property
     def odin (self) -> str:
@@ -22,4 +22,4 @@ class Tutor (Student):
     """Tutor class, extension of student class"""
 
     def __str__ (self) -> str:
-        return f"[TUTOR]{self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
+        return f"[TUTOR] {self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
