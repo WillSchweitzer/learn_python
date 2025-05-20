@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-10
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.13"]
