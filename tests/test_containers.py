@@ -28,14 +28,14 @@ class TestQueueClass (unittest.TestCase):
     def test_enqueue (self):
         """Test that enqueue adds an element"""
         q = Queue[Student]()
-        s = Student(DATA)
+        s = Student(*DATA)
         q.enqueue(s)
         self.assertFalse(q.is_empty())
 
     def test_dequeue (self):
         """Test dequeue removes an element"""
         q = Queue[Student]()
-        s = Student(DATA)
+        s = Student(*DATA)
         q.enqueue(s)
         self.assertIsInstance(q.dequeue(), Student)
         self.assertTrue(q.is_empty())

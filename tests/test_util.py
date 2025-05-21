@@ -9,13 +9,7 @@ from src.util import EmptyQueue
 
 # ========== Constants ========== #
 
-DATA: dict[str, str | int | float] = {
-    'first' : 'John',
-    'last' : 'Doe',
-    'age' : 99,
-    'gpa' : 4.00,
-    'email' : 'john_doe@example.com'
-}
+DATA: tuple[str, str, int, float, str] = ('John', 'Doe', 99, 4.00, 'john_doe@example.com')
 
 
 # ========== Tests ========== #

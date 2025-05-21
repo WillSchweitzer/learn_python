@@ -1,25 +1,28 @@
 '''Simple student class'''
 
+from dataclasses import dataclass
+
+@dataclass
 class Student:
     """Student class"""
-    def __init__(self, data: dict[str, str | int | float]):
-        self._first: str = str(data["first"])
-        self._last: str = str(data["last"])
-        self._age: int = int(data["age"])
-        self._gpa: float = float(data["gpa"])
-        self._email: str = str(data["email"])
+    first: str
+    last: str
+    age: int
+    gpa: float
+    email: str
 
     def __str__ (self) -> str:
-        return f"[STUDENT] {self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
+        return f"[STUDENT] {self.first} {self.last} ({self.age}) {self.email}: {self.gpa}"
 
     @property
     def odin (self) -> str:
         """Get the ODIN id."""
-        return self._email.split('@', maxsplit=1)[0]
+        return self.email.split('@', maxsplit=1)[0]
 
 
+@dataclass
 class Tutor (Student):
     """Tutor class, extension of student class"""
 
     def __str__ (self) -> str:
-        return f"[TUTOR] {self._first} {self._last} ({self._age}) {self._email}: {self._gpa}"
+        return f"[TUTOR] {self.first} {self.last} ({self.age}) {self.email}: {self.gpa}"

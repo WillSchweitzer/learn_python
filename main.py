@@ -5,15 +5,9 @@ def main ():
     """Main function"""
     students = Queue[Student]()
 
-    data: dict[str, str | int | float] = {
-        'first' : 'Will',
-        'last' : 'Schweitzer',
-        'age' : 28,
-        'gpa' : 3.55,
-        'email' : 'willschw@pdx.edu'
-    }
+    data: tuple[str, str, int, float, str] = ('John', 'Doe', 99, 4.00, 'john_doe@example.com')
 
-    students.enqueue(Student(data))
+    students.enqueue(Student(*data))
     print(students.dequeue())
 
 if __name__ == '__main__':
