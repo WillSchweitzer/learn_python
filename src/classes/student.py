@@ -1,5 +1,6 @@
 '''Simple student class'''
 
+from typing import Any
 from dataclasses import dataclass
 
 @dataclass
@@ -13,6 +14,17 @@ class Student:
 
     def __str__ (self) -> str:
         return f"[STUDENT] {self.first} {self.last} ({self.age}) {self.email}: {self.gpa}"
+
+
+    def __eq__ (self, other: Any) -> bool:
+        return (
+            (type(self) == type(other)) and
+            (self.first == other.first) and
+            (self.last == other.last) and
+            (self.age == other.age) and
+            (self.gpa == other.gpa) and
+            (self.email == other.email)
+        )
 
     @property
     def odin (self) -> str:

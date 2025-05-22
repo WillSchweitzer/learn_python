@@ -28,6 +28,17 @@ class TestStudentClass (unittest.TestCase):
         s = Student(*DATA)
         self.assertEqual("john_doe", s.odin)
 
+    def test_equals (self):
+        """Test __eq__ """
+        s1 = Student(*DATA)
+        s2 = Student(*DATA)
+        s3 = Student("Wrong", "Wrong", 0, 1.0, "Wrong")
+        s4 = Tutor(*DATA)
+        self.assertEqual(s1, s2)
+        self.assertNotEqual(s1, s3)
+        self.assertNotEqual(s1, s4)
+
+
 class TestTutorClass (unittest.TestCase):
     """Test class for tutor"""
 
