@@ -38,3 +38,10 @@ class Tutor (Student):
 
     def __str__ (self) -> str:
         return f"[TUTOR] {self.first} {self.last} ({self.age}) {self.email}: {self.gpa}"
+
+@dataclass
+class Assistant (Student):
+    """Assistant class, extension of student class"""
+
+    def __str__ (self) -> str:
+        return f"[TA] {self.first} {self.last} ({self.age}) {self.email}"

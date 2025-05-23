@@ -4,7 +4,7 @@
 
 import unittest
 
-from src.classes.student import Student, Tutor
+from src.classes.student import Student, Tutor, Assistant
 from tests.test_util import DATA
 
 
@@ -46,3 +46,11 @@ class TestTutorClass (unittest.TestCase):
         """Test the Tutor can be output correctly"""
         s = Tutor(*DATA)
         self.assertTrue("TUTOR" in str(s))
+
+class TestAssistantClass (unittest.TestCase):
+    """Test class for tutor"""
+
+    def test_str(self):
+        """Test the Tutor can be output correctly"""
+        a = Assistant(*DATA)
+        self.assertTrue("TA" in str(a))
