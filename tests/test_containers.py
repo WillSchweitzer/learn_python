@@ -5,7 +5,7 @@
 import unittest
 
 from src.classes.student import Student
-from src.classes.containers import Queue
+from src.classes.containers import Queue, HashTable
 from src.util import EmptyQueue
 from tests.test_util import DATA
 
@@ -43,3 +43,25 @@ class TestQueueClass (unittest.TestCase):
         # Test that dequeue raises an exception if called while the queue is empty.
         with self.assertRaises(EmptyQueue):
             q.dequeue()
+
+class TestHashTable (unittest.TestCase):
+    """Test class for Hash Tables"""
+
+    def test_create_hash_table (self) -> None:
+        """Test hash table creation"""
+        table = HashTable[Student]("filepath.txt")
+        self.assertIsInstance(table, HashTable)
+
+    def test_add (self):
+        """Test adding to the hash table"""
+        table = HashTable[Student]("filepath.txt")
+        s = Student(*DATA)
+        table.add(key=s.odin, value=s)
+        self.assertEqual(table[s.odin], s)
+
+    def test_retrieve (self):
+        """Test retrieving from the hash table"""
+        table = HashTable[Student]("filepath.txt")
+        s = Student(*DATA)
+        table.add(key=s.odin, value=s)
+        self.assertEqual(table.retrieve(s.odin), s)
